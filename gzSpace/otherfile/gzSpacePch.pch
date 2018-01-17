@@ -1,0 +1,31 @@
+//
+//  gzSpacePch.pch
+//  gzSpace
+//
+//  Created by 智享单车 on 2018/1/17.
+//  Copyright © 2018年 智享单车. All rights reserved.
+//
+
+#ifndef gzSpacePch_pch
+#define gzSpacePch_pch
+//常用全局常量
+#define WIDTH [[UIScreen mainScreen] bounds].size.width
+#define HEIGHT [[UIScreen mainScreen] bounds].size.height
+#define BOUND [[UIScreen mainScreen] bounds]
+#define mainNavColor = [UIColor colorWithRed:255/255.0 green:100/255.0 blue:59/255.0 alpha:1]
+#define h1TextColor = [UIColor colorWithRed:255/255.0 green:100/255.0 blue:59/255.0 alpha:1]
+#define h2TextColor = [UIColor colorWithRed:255/255.0 green:100/255.0 blue:59/255.0 alpha:1]
+//日志控制
+#ifdef DEBUG
+#define DLog(...) printf("[%s] %s [第%d行]: %s\n", __TIME__ ,__PRETTY_FUNCTION__ ,__LINE__, [[NSString stringWithFormat:__VA_ARGS__] UTF8String])
+#else
+#define DLog(...)
+#endif
+
+//引入头
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import <SVProgressHUD.h>
+#import "CYXHttpRequest.h"
+
+#endif /* gzSpacePch_pch */
