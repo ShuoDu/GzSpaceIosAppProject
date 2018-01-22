@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface MeTwoCell : UITableViewCell
-
++ (instancetype)insWithCallback:(void(^)(NSInteger))callback;
 @end

@@ -26,6 +26,9 @@
                         <state key="normal" title="待发货">
                             <color key="titleColor" red="0.83529411760000005" green="0.098039215690000001" blue="0.062745098040000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
+                        <connections>
+                            <action selector="twoAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Hk5-50-l1E"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rrx-pC-H1M">
                         <rect key="frame" x="173" y="11" width="62" height="54"/>
@@ -34,6 +37,9 @@
                         <state key="normal" title="待收货">
                             <color key="titleColor" red="0.83529411760000005" green="0.098039215690000001" blue="0.062745098040000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
+                        <connections>
+                            <action selector="threeAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="1Mu-On-FQx"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ylV-dx-iLO">
                         <rect key="frame" x="258" y="11" width="62" height="54"/>
@@ -42,6 +48,9 @@
                         <state key="normal" title="待收货">
                             <color key="titleColor" red="0.83529411760000005" green="0.098039215690000001" blue="0.062745098040000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
+                        <connections>
+                            <action selector="fourAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="TC3-qU-roE"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A8g-mK-h1I">
                         <rect key="frame" x="16" y="11" width="52" height="54"/>
@@ -50,11 +59,20 @@
                         <state key="normal" title="已下单">
                             <color key="titleColor" red="0.83529411760000005" green="0.098039215690000001" blue="0.062745098040000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
+                        <connections>
+                            <action selector="oneAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="3wg-Kp-5zh"/>
+                        </connections>
                     </button>
                 </subviews>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
-            <point key="canvasLocation" x="-208" y="-14"/>
+            <connections>
+                <outlet property="four" destination="ylV-dx-iLO" id="3V9-ZR-GTE"/>
+                <outlet property="one" destination="A8g-mK-h1I" id="Bzq-ft-ydI"/>
+                <outlet property="three" destination="Rrx-pC-H1M" id="NAd-kk-VQ2"/>
+                <outlet property="two" destination="GFC-xq-GDo" id="D2G-zh-Dw9"/>
+            </connections>
+            <point key="canvasLocation" x="-623" y="-33"/>
         </tableViewCell>
     </objects>
 </document>
