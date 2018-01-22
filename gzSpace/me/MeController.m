@@ -33,7 +33,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor colorWithRed:213/255.0 green:25/255.0 blue:16/255.0 alpha:1];
     self.tabBarItem.title = @"我的";
     
     myTableView = [[UITableView alloc]initWithFrame:CGRectMake(0,-45, self.view.frame.size.width, [UIScreen mainScreen].bounds.size.height)];
@@ -44,7 +44,7 @@
                                                green:240/255.0
                                                 blue:240/255.0
                                                alpha:1.0];
-    myTableView.scrollEnabled = NO;
+    myTableView.scrollEnabled = YES;
     [self.view addSubview:myTableView];
    
     MeHeadView *head = [MeHeadView ins];
