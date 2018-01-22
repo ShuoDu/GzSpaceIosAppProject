@@ -65,6 +65,10 @@
 		EF1252A320157F3300670A45 /* UseGzController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF1252A220157F3300670A45 /* UseGzController.m */; };
 		EF1252A620158D8E00670A45 /* UseGzJiaController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF1252A520158D8E00670A45 /* UseGzJiaController.m */; };
 		EF1252A920158F3600670A45 /* ScanController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF1252A820158F3600670A45 /* ScanController.m */; };
+		EF1252AD2015B40000670A45 /* MeOneCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EF1252AB2015B40000670A45 /* MeOneCell.m */; };
+		EF1252AE2015B40000670A45 /* MeOneCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF1252AC2015B40000670A45 /* MeOneCell.xib */; };
+		EF1252B22015B60200670A45 /* MeTwoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EF1252B02015B60200670A45 /* MeTwoCell.m */; };
+		EF1252B32015B60200670A45 /* MeTwoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF1252B12015B60200670A45 /* MeTwoCell.xib */; };
 		EF4891DB1FDF757A005982B2 /* SpaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF4891D91FDF757A005982B2 /* SpaceController.m */; };
 		EF4891E41FDF812C005982B2 /* StoreController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF4891E21FDF812C005982B2 /* StoreController.m */; };
 		EF4891E51FDF812C005982B2 /* StoreController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF4891E31FDF812C005982B2 /* StoreController.xib */; };
@@ -217,6 +221,12 @@
 		EF1252A520158D8E00670A45 /* UseGzJiaController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UseGzJiaController.m; sourceTree = "<group>"; };
 		EF1252A720158F3600670A45 /* ScanController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScanController.h; sourceTree = "<group>"; };
 		EF1252A820158F3600670A45 /* ScanController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScanController.m; sourceTree = "<group>"; };
+		EF1252AA2015B40000670A45 /* MeOneCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MeOneCell.h; sourceTree = "<group>"; };
+		EF1252AB2015B40000670A45 /* MeOneCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeOneCell.m; sourceTree = "<group>"; };
+		EF1252AC2015B40000670A45 /* MeOneCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MeOneCell.xib; sourceTree = "<group>"; };
+		EF1252AF2015B60200670A45 /* MeTwoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MeTwoCell.h; sourceTree = "<group>"; };
+		EF1252B02015B60200670A45 /* MeTwoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeTwoCell.m; sourceTree = "<group>"; };
+		EF1252B12015B60200670A45 /* MeTwoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MeTwoCell.xib; sourceTree = "<group>"; };
 		EF4891D81FDF757A005982B2 /* SpaceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpaceController.h; sourceTree = "<group>"; };
 		EF4891D91FDF757A005982B2 /* SpaceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpaceController.m; sourceTree = "<group>"; };
 		EF4891E11FDF812C005982B2 /* StoreController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StoreController.h; sourceTree = "<group>"; };
@@ -564,6 +574,12 @@
 				EF0D21C11FDEAC8000B9D776 /* MeHeadView.h */,
 				EF0D21C21FDEAC8000B9D776 /* MeHeadView.m */,
 				EF0D21C41FDEAC9200B9D776 /* MeHeadView.xib */,
+				EF1252AA2015B40000670A45 /* MeOneCell.h */,
+				EF1252AB2015B40000670A45 /* MeOneCell.m */,
+				EF1252AC2015B40000670A45 /* MeOneCell.xib */,
+				EF1252AF2015B60200670A45 /* MeTwoCell.h */,
+				EF1252B02015B60200670A45 /* MeTwoCell.m */,
+				EF1252B12015B60200670A45 /* MeTwoCell.xib */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -728,12 +744,14 @@
 			files = (
 				EF0D21BF1FDEA7AE00B9D776 /* OrderController.xib in Resources */,
 				EF0D216A1FDE66E700B9D776 /* Assets.xcassets in Resources */,
+				EF1252AE2015B40000670A45 /* MeOneCell.xib in Resources */,
 				EF0D21C51FDEAC9200B9D776 /* MeHeadView.xib in Resources */,
 				EF4891E51FDF812C005982B2 /* StoreController.xib in Resources */,
 				EF4892161FDFB659005982B2 /* MainOneCell.xib in Resources */,
 				EFE3AAA72012F10100DE6211 /* ToolController.xib in Resources */,
 				EF0D21BA1FDE9D9300B9D776 /* MainHeadView.xib in Resources */,
 				EF8DF0DB201309B100ABA151 /* StoreCell.xib in Resources */,
+				EF1252B32015B60200670A45 /* MeTwoCell.xib in Resources */,
 				EF48921B1FDFC766005982B2 /* MainTwoCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -860,10 +878,12 @@
 				EF0D21701FDE66E800B9D776 /* main.m in Sources */,
 				EF07A682200F324300A6604D /* NSObject+YYAddForARC.m in Sources */,
 				EFE3AAA62012F10100DE6211 /* ToolController.m in Sources */,
+				EF1252B22015B60200670A45 /* MeTwoCell.m in Sources */,
 				EF07A698200F337500A6604D /* NSObject+YDBAdd.m in Sources */,
 				EF0D21621FDE66E700B9D776 /* AppDelegate.m in Sources */,
 				EF07A686200F324300A6604D /* NSDictionary+YYAdd.m in Sources */,
 				EF07A67C200F324300A6604D /* NSBundle+YYAdd.m in Sources */,
+				EF1252AD2015B40000670A45 /* MeOneCell.m in Sources */,
 				EF07A674200F324300A6604D /* UIView+YYAdd.m in Sources */,
 				EF4891DB1FDF757A005982B2 /* SpaceController.m in Sources */,
 				EF07A677200F324300A6604D /* UIImage+YYAdd.m in Sources */,
