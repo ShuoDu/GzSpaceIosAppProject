@@ -37,10 +37,7 @@ static NSString *twoCellID = @"MainTwoCell";
     myTableView.delegate = self;
     myTableView.dataSource = self;
     myTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    myTableView.backgroundColor = [UIColor colorWithRed:235/255.0
-                                                 green:240/255.0
-                                                  blue:240/255.0
-                                                 alpha:1.0];
+    myTableView.backgroundColor = NewViewBack;
     [myTableView registerNib:[UINib nibWithNibName:@"MainOneCell" bundle:nil] forCellReuseIdentifier:oneCellID];
      [myTableView registerNib:[UINib nibWithNibName:@"MainTwoCell" bundle:nil] forCellReuseIdentifier:twoCellID];
     [self.view addSubview:myTableView];

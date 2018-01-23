@@ -68,10 +68,7 @@ static NSString *oneCellID = @"MainOneCell";
     myTableView.delegate = self;
     myTableView.dataSource = self;
     myTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    myTableView.backgroundColor = [UIColor colorWithRed:235/255.0
-                                                  green:240/255.0
-                                                   blue:240/255.0
-                                                  alpha:1.0];
+    myTableView.backgroundColor = NewViewBack;
     [myTableView registerNib:[UINib nibWithNibName:@"MainOneCell" bundle:nil] forCellReuseIdentifier:oneCellID];
     [self.view addSubview:myTableView];
     
@@ -105,10 +102,7 @@ static NSString *oneCellID = @"MainOneCell";
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
         MainOneCell *cellOne = [tableView dequeueReusableCellWithIdentifier:oneCellID];
-        cellOne.backgroundColor = [UIColor colorWithRed:235/255.0
-                                                   green:240/255.0
-                                                    blue:240/255.0
-                                                   alpha:1.0];
+        cellOne.backgroundColor = NewViewBack;
         return cellOne;
 }
 

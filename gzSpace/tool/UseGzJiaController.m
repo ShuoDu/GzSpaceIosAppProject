@@ -7,6 +7,7 @@
 //
 
 #import "UseGzJiaController.h"
+#import "UIColor+YYAdd.h"
 static NSString *detailCellID = @"YDBAboutUsCell";
 @interface UseGzJiaController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong)UITableView *myTable;
@@ -19,7 +20,7 @@ static NSString *detailCellID = @"YDBAboutUsCell";
     [super viewDidLoad];
     self.navigationItem.title = @"格子架";
     self.dataArray = [[NSMutableArray alloc]initWithObjects:@{@"店铺":@"请输入店铺名称"},@{@"店铺类型":@"请选择店铺类型"},@{@"可用面积":@"请输入可用面积"},@{@"格子架":@"请选择格子架样式"},@{@"格子架数量":@"请选择需用格子架数量"},@{@"联系方式":@"请输入联系方式"},nil];
-    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:213/255.0 green:25/255.0 blue:16/255.0 alpha:1];
+    self.navigationController.navigationBar.barTintColor = MainNavColor;
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     self.navigationController.navigationBar.translucent = NO;
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
@@ -35,10 +36,7 @@ static NSString *detailCellID = @"YDBAboutUsCell";
     self.myTable.delegate = self;
     self.myTable.dataSource = self;
     //    myTableView.backgroundColor =  [UIColor colorWithRed:213/255.0 green:25/255.0 blue:16/255.0 alpha:1];
-    self.myTable.backgroundColor=[UIColor colorWithRed:235/255.0
-                                                 green:240/255.0
-                                                  blue:240/255.0
-                                                 alpha:1.0];
+    self.myTable.backgroundColor=NewViewBack;
     self.myTable.scrollEnabled = YES;
     [self.view addSubview:self.myTable];
     [self addBottomView];

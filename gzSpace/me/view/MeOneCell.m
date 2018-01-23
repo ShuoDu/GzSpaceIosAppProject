@@ -7,6 +7,7 @@
 //
 
 #import "MeOneCell.h"
+#import "UIButton+JKImagePosition.h"
 @interface MeOneCell()
 @property (weak, nonatomic) IBOutlet UIButton *oneBtn;
 @property (weak, nonatomic) IBOutlet UIButton *twoBtn;
@@ -21,10 +22,10 @@
     return view;
 }
 
-
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+    //[self.oneBtn jk_setImagePosition:2 spacing:15]; //设置btn图片的位置
     self.oneBtn.tag = 201;
     self.twoBtn.tag = 202;
     self.threeBtn.tag = 203;

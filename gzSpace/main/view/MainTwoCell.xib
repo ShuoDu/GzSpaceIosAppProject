@@ -42,7 +42,7 @@
                     <constraint firstItem="s0a-NB-rrb" firstAttribute="height" secondItem="kyN-iH-uQG" secondAttribute="height" id="z0s-48-ldR"/>
                 </constraints>
             </tableViewCellContentView>
-            <color key="backgroundColor" red="0.97254901959999995" green="0.97647058819999999" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="E3J-D9-N78" firstAttribute="centerY" secondItem="aW0-zy-SZf" secondAttribute="centerY" id="A4w-KG-fpr"/>
                 <constraint firstItem="s0a-NB-rrb" firstAttribute="centerY" secondItem="aW0-zy-SZf" secondAttribute="centerY" id="QRL-0o-7gg"/>

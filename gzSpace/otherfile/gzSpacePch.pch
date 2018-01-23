@@ -12,10 +12,13 @@
 #define WIDTH [[UIScreen mainScreen] bounds].size.width
 #define HEIGHT [[UIScreen mainScreen] bounds].size.height
 #define BOUND [[UIScreen mainScreen] bounds]
-#define MainNavColor = [UIColor colorWithRed:255/255.0 green:100/255.0 blue:59/255.0 alpha:1]
-#define H1TextColor = [UIColor colorWithRed:255/255.0 green:100/255.0 blue:59/255.0 alpha:1]
-#define H2TextColor = [UIColor colorWithRed:255/255.0 green:100/255.0 blue:59/255.0 alpha:1]
-#define ViewBackColor = [UIColor colorWithRed:235/255.0 green:240/255.0 blue:240/255.0 alpha:1.0];
+#define OldNavColor [UIColor colorWithRed:213/255.0 green:25/255.0 blue:16/255.0 alpha:1];;
+#define MainNavColor [UIColor colorWithRed:255/255.0 green:100/255.0 blue:59/255.0 alpha:1]
+#define MainHexColor #FF643B
+#define H1TextColor [UIColor colorWithRed:255/255.0 green:100/255.0 blue:59/255.0 alpha:1]
+#define H2TextColor [UIColor colorWithRed:255/255.0 green:100/255.0 blue:59/255.0 alpha:1]
+#define ViewBackColor [UIColor colorWithRed:235/255.0 green:240/255.0 blue:240/255.0 alpha:1.0]
+#define NewViewBack [UIColor colorWithRed:245/255.0 green:245/255.0 blue:245/255.0 alpha:1.0]
 //日志控制
 #ifdef DEBUG
 #define DLog(...) printf("[%s] %s [第%d行]: %s\n", __TIME__ ,__PRETTY_FUNCTION__ ,__LINE__, [[NSString stringWithFormat:__VA_ARGS__] UTF8String])
@@ -29,6 +32,7 @@
 #import <Foundation/Foundation.h>
 #import <SVProgressHUD.h>
 #import "CYXHttpRequest.h"
-#import "UIColor+YYAdd.h"
+#import "UIView+YYAdd.h"
+//#import "UIColor+YYAdd.h"
 
 #endif /* gzSpacePch_pch */

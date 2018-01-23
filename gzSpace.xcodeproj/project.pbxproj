@@ -72,6 +72,8 @@
 		EF1252BC2015D46600670A45 /* GzManageController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF1252BB2015D46600670A45 /* GzManageController.m */; };
 		EF1252BF2015D4AD00670A45 /* KuaiDiController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF1252BE2015D4AD00670A45 /* KuaiDiController.m */; };
 		EF1252C22015D5B000670A45 /* OrderController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF1252C12015D5B000670A45 /* OrderController.m */; };
+		EF37C784201704FE007A6E9A /* OrderOneCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EF37C782201704FE007A6E9A /* OrderOneCell.m */; };
+		EF37C785201704FE007A6E9A /* OrderOneCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF37C783201704FE007A6E9A /* OrderOneCell.xib */; };
 		EF4891DB1FDF757A005982B2 /* SpaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF4891D91FDF757A005982B2 /* SpaceController.m */; };
 		EF4891E41FDF812C005982B2 /* StoreController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF4891E21FDF812C005982B2 /* StoreController.m */; };
 		EF4891E51FDF812C005982B2 /* StoreController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF4891E31FDF812C005982B2 /* StoreController.xib */; };
@@ -237,6 +239,9 @@
 		EF1252BE2015D4AD00670A45 /* KuaiDiController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KuaiDiController.m; sourceTree = "<group>"; };
 		EF1252C02015D5B000670A45 /* OrderController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderController.h; sourceTree = "<group>"; };
 		EF1252C12015D5B000670A45 /* OrderController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderController.m; sourceTree = "<group>"; };
+		EF37C781201704FE007A6E9A /* OrderOneCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderOneCell.h; sourceTree = "<group>"; };
+		EF37C782201704FE007A6E9A /* OrderOneCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderOneCell.m; sourceTree = "<group>"; };
+		EF37C783201704FE007A6E9A /* OrderOneCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderOneCell.xib; sourceTree = "<group>"; };
 		EF4891D81FDF757A005982B2 /* SpaceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpaceController.h; sourceTree = "<group>"; };
 		EF4891D91FDF757A005982B2 /* SpaceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpaceController.m; sourceTree = "<group>"; };
 		EF4891E11FDF812C005982B2 /* StoreController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StoreController.h; sourceTree = "<group>"; };
@@ -518,6 +523,7 @@
 		EF0D21941FDE6B6D00B9D776 /* order */ = {
 			isa = PBXGroup;
 			children = (
+				EF37C780201704D5007A6E9A /* view */,
 				EF1252C02015D5B000670A45 /* OrderController.h */,
 				EF1252C12015D5B000670A45 /* OrderController.m */,
 			);
@@ -597,6 +603,16 @@
 				EF1252AF2015B60200670A45 /* MeTwoCell.h */,
 				EF1252B02015B60200670A45 /* MeTwoCell.m */,
 				EF1252B12015B60200670A45 /* MeTwoCell.xib */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		EF37C780201704D5007A6E9A /* view */ = {
+			isa = PBXGroup;
+			children = (
+				EF37C781201704FE007A6E9A /* OrderOneCell.h */,
+				EF37C782201704FE007A6E9A /* OrderOneCell.m */,
+				EF37C783201704FE007A6E9A /* OrderOneCell.xib */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -767,6 +783,7 @@
 				EFE3AAA72012F10100DE6211 /* ToolController.xib in Resources */,
 				EF0D21BA1FDE9D9300B9D776 /* MainHeadView.xib in Resources */,
 				EF8DF0DB201309B100ABA151 /* StoreCell.xib in Resources */,
+				EF37C785201704FE007A6E9A /* OrderOneCell.xib in Resources */,
 				EF1252B32015B60200670A45 /* MeTwoCell.xib in Resources */,
 				EF48921B1FDFC766005982B2 /* MainTwoCell.xib in Resources */,
 			);
@@ -891,6 +908,7 @@
 				EF0D21A41FDE766100B9D776 /* GzTabBarViewController.m in Sources */,
 				EF48921E1FDFD9E0005982B2 /* SpaceDetailController.m in Sources */,
 				EF07A67F200F324300A6604D /* NSThread+YYAdd.m in Sources */,
+				EF37C784201704FE007A6E9A /* OrderOneCell.m in Sources */,
 				EF07A688200F324300A6604D /* YYCGUtilities.m in Sources */,
 				EF07A695200F337500A6604D /* UILabel+YDBCommon.m in Sources */,
 				EF07A670200F324300A6604D /* UIApplication+YYAdd.m in Sources */,

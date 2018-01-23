@@ -27,6 +27,7 @@
     [[NSUserDefaults standardUserDefaults]setObject:@"1" forKey:@"first"];
     [[NSUserDefaults standardUserDefaults]synchronize];
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:213/255.0 green:25/255.0 blue:16/255.0 alpha:1];
+    self.navigationController.navigationBar.barTintColor = MainNavColor;
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     self.navigationController.navigationBar.translucent = NO;
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
@@ -34,10 +35,13 @@
     self.navigationController.navigationBar.shadowImage = [UIImage new];
     NSDictionary * dict = [NSDictionary dictionaryWithObject:[UIColor whiteColor] forKey:UITextAttributeTextColor];
     self.navigationController.navigationBar.titleTextAttributes = dict;
-    self.view.backgroundColor = [UIColor colorWithRed:235/255.0
-                                              green:240/255.0
-                                               blue:240/255.0
-                                              alpha:1.0];
+    self.view.backgroundColor = NewViewBack;
+    UIBarButtonItem *backButtonItem = [[UIBarButtonItem alloc] init];
+    backButtonItem.title =@"返回";
+    self.navigationItem.backBarButtonItem = backButtonItem;
+    
+
+    
 }
 
 @end

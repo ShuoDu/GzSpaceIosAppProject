@@ -15,42 +15,60 @@
 #import "GzManageController.h"
 #import "KuaiDiController.h"
 #import "OrderController.h"
+#import "UIView+YYAdd.h"
+#import "UIButton+JKImagePosition.h"
 @interface MeController ()<UITableViewDelegate,UITableViewDataSource>
 {
     UITableView *myTableView;
 }
 @property(nonatomic,copy)NSArray *dataArray;
+@property(nonatomic,strong)UIImageView *photo;
+@property(nonatomic,strong)UILabel *phone;
 @end
 
 @implementation MeController
+- (void)viewWillAppear:(BOOL)animated {
+    [self.navigationController setNavigationBarHidden:YES animated:animated];
+    [super viewWillAppear:animated];
+}
 
+- (void)viewWillDisappear:(BOOL)animated {
+    [self.navigationController setNavigationBarHidden:NO animated:animated];
+    [super viewWillDisappear:animated];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor colorWithRed:255/255.0 green:100/255.0 blue:59/255.0 alpha:1];
     self.tabBarItem.title = @"我的";
- 
-    myTableView = [[UITableView alloc]initWithFrame:CGRectMake(0,-45, self.view.frame.size.width, [UIScreen mainScreen].bounds.size.height) style:(UITableViewStyleGrouped)];
+    [self addMeContent];
+    myTableView = [[UITableView alloc]initWithFrame:CGRectMake(0,160, self.view.frame.size.width, [UIScreen mainScreen].bounds.size.height) style:(UITableViewStyleGrouped)];
+    myTableView.layer.masksToBounds = YES;
+    myTableView.layer.cornerRadius = 18;
     myTableView.delegate = self;
     myTableView.dataSource = self;
-//    myTableView.backgroundColor =  [UIColor colorWithRed:213/255.0 green:25/255.0 blue:16/255.0 alpha:1];
-    myTableView.backgroundColor=[UIColor colorWithRed:235/255.0
-                                               green:240/255.0
-                                                blue:240/255.0
-                                               alpha:1.0];
-    myTableView.scrollEnabled = YES;
-    
+    myTableView.backgroundColor = NewViewBack;
     [self.view addSubview:myTableView];
     [myTableView registerNib:[UINib nibWithNibName:@"MeOneCell" bundle:nil] forCellReuseIdentifier:@"meOneCell"];
     [myTableView registerNib:[UINib nibWithNibName:@"MeTwoCell" bundle:nil] forCellReuseIdentifier:@"meTwoCell"];
-    
-  
-    MeHeadView *head = [MeHeadView ins];
-    head.frame = CGRectMake(0, 0,myTableView.frame.size.width, 180);
-    myTableView.tableHeaderView = head;
-//    myTableView.bounces = NO;
     self.dataArray = @[@[@"我的格子",@""],@[@"我的订单",@""],@[@"钱包",@"收藏"],@[@"设置",@"关于我们"]];
 }
+
+- (void)addMeContent {
+    self.photo = [[UIImageView alloc]initWithFrame:CGRectMake(10, 35, 70, 70)];
+    self.photo.centerX = self.view.centerX;
+    self.photo.image = [UIImage imageNamed:@"photo"];
+    self.photo.layer.cornerRadius = self.photo.frame.size.width / 2;
+    self.photo.layer.masksToBounds = YES;
+    [self.view addSubview:self.photo];
+    self.phone = [[UILabel alloc]initWithFrame:CGRectMake(10, 103, 200, 40)];
+    self.phone.centerX = self.view.centerX;
+    self.phone.text = @"18801114226";
+    self.phone.textAlignment = NSTextAlignmentCenter;
+    self.phone.textColor = [UIColor whiteColor];
+    [self.view addSubview:self.phone];
+}
+
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 2;
@@ -70,7 +88,10 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    return 1;
+    if (section == 3) {
+        return 250;
+    }
+    return 10;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
@@ -78,6 +99,20 @@
     view.backgroundColor = [UIColor clearColor];
     return view;
 }
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    if (section == 0) {
+        return 0;
+    }
+    return 1;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    UIView *view=[[UIView alloc] initWithFrame:CGRectMake(0, 0, myTableView.frame.size.width, 1)];
+    view.backgroundColor = [UIColor clearColor];
+    return view;
+}
+
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
