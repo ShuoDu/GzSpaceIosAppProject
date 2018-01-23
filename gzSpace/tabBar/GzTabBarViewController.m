@@ -12,6 +12,7 @@
 #import "MeController.h"
 #import "SpaceController.h"
 #import "StoreController.h"
+#import "ToolController.h"
 @interface GzTabBarViewController ()
 @end
 
@@ -109,12 +110,13 @@
     [button setImage:[UIImage imageNamed:@"camera"] forState:UIControlStateNormal];
     [self.tabBar addSubview:button];
     [self.tabBar bringSubviewToFront:button];
-    [button addTarget:self action:@selector(selectImagePicker) forControlEvents:UIControlEventTouchUpInside];
+    [button addTarget:self action:@selector(addTool) forControlEvents:UIControlEventTouchUpInside];
 }
 
-- (void)selectImagePicker {
-    UIActionSheet *sheet = [[UIActionSheet alloc]initWithTitle:@"" delegate:nil cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"扫一扫",@"用格子",@"格子架", nil];
-    [sheet showInView:self.view];
+- (void)addTool {
+    ToolController *tool = [[ToolController alloc]init];
+    [self presentViewController:tool animated:YES completion:nil];
+
 }
 
 @end

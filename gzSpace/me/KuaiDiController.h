@@ -1,5 +1,5 @@
 //
-//  OrderController.h
+//  KuaiDiController.h
 //  gzSpace
 //
 //  Created by 智享单车 on 2018/1/22.
@@ -8,6 +8,6 @@
 
 #import "BaseController.h"
 
-@interface OrderController : BaseController
+@interface KuaiDiController : BaseController
 
 @end
