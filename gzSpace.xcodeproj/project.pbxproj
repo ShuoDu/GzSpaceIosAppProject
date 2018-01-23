@@ -74,7 +74,6 @@
 		EF1252C22015D5B000670A45 /* OrderController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF1252C12015D5B000670A45 /* OrderController.m */; };
 		EF4891DB1FDF757A005982B2 /* SpaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF4891D91FDF757A005982B2 /* SpaceController.m */; };
 		EF4891E41FDF812C005982B2 /* StoreController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF4891E21FDF812C005982B2 /* StoreController.m */; };
-		EF4891E51FDF812C005982B2 /* StoreController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF4891E31FDF812C005982B2 /* StoreController.xib */; };
 		EF4892151FDFB659005982B2 /* MainOneCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EF4892131FDFB659005982B2 /* MainOneCell.m */; };
 		EF4892161FDFB659005982B2 /* MainOneCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF4892141FDFB659005982B2 /* MainOneCell.xib */; };
 		EF48921A1FDFC766005982B2 /* MainTwoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EF4892181FDFC766005982B2 /* MainTwoCell.m */; };
@@ -241,7 +240,6 @@
 		EF4891D91FDF757A005982B2 /* SpaceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpaceController.m; sourceTree = "<group>"; };
 		EF4891E11FDF812C005982B2 /* StoreController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StoreController.h; sourceTree = "<group>"; };
 		EF4891E21FDF812C005982B2 /* StoreController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StoreController.m; sourceTree = "<group>"; };
-		EF4891E31FDF812C005982B2 /* StoreController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoreController.xib; sourceTree = "<group>"; };
 		EF4892121FDFB659005982B2 /* MainOneCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainOneCell.h; sourceTree = "<group>"; };
 		EF4892131FDFB659005982B2 /* MainOneCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainOneCell.m; sourceTree = "<group>"; };
 		EF4892141FDFB659005982B2 /* MainOneCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainOneCell.xib; sourceTree = "<group>"; };
@@ -607,7 +605,6 @@
 				EF8DF0D62013098700ABA151 /* view */,
 				EF4891E11FDF812C005982B2 /* StoreController.h */,
 				EF4891E21FDF812C005982B2 /* StoreController.m */,
-				EF4891E31FDF812C005982B2 /* StoreController.xib */,
 			);
 			path = store;
 			sourceTree = "<group>";
@@ -762,7 +759,6 @@
 				EF0D216A1FDE66E700B9D776 /* Assets.xcassets in Resources */,
 				EF1252AE2015B40000670A45 /* MeOneCell.xib in Resources */,
 				EF0D21C51FDEAC9200B9D776 /* MeHeadView.xib in Resources */,
-				EF4891E51FDF812C005982B2 /* StoreController.xib in Resources */,
 				EF4892161FDFB659005982B2 /* MainOneCell.xib in Resources */,
 				EFE3AAA72012F10100DE6211 /* ToolController.xib in Resources */,
 				EF0D21BA1FDE9D9300B9D776 /* MainHeadView.xib in Resources */,

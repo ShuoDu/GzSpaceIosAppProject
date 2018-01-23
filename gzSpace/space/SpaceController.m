@@ -102,8 +102,8 @@ static NSString *oneCellID = @"MainOneCell";
 }
 
 
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+
         MainOneCell *cellOne = [tableView dequeueReusableCellWithIdentifier:oneCellID];
         cellOne.backgroundColor = [UIColor colorWithRed:235/255.0
                                                    green:240/255.0

@@ -30,11 +30,9 @@ static NSString *detailCellID = @"YDBAboutUsCell";
     self.view.backgroundColor = [UIColor colorWithRed:235/255.0 green:240/255.0 blue:240/255.0 alpha:1.0];
     UIBarButtonItem *leftItem = [[UIBarButtonItem alloc]initWithTitle:@"<返回" style:UIBarButtonItemStyleDone target:self action:@selector(backAction)];
     self.navigationItem.leftBarButtonItem = leftItem;
-    
     self.myTable = [[UITableView alloc]initWithFrame:CGRectMake(0,0, WIDTH,HEIGHT-60)];
     self.myTable.delegate = self;
     self.myTable.dataSource = self;
-    //    myTableView.backgroundColor =  [UIColor colorWithRed:213/255.0 green:25/255.0 blue:16/255.0 alpha:1];
     self.myTable.backgroundColor=[UIColor colorWithRed:235/255.0
                                                  green:240/255.0
                                                   blue:240/255.0
