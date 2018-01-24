@@ -54,10 +54,9 @@ static NSString *oneCellID = @"MainOneCell";
     myTableView.backgroundColor = NewViewBack;
     [myTableView registerNib:[UINib nibWithNibName:@"MainOneCell" bundle:nil] forCellReuseIdentifier:oneCellID];
     [self.view addSubview:myTableView];
-    
+    self.view.backgroundColor = NewViewBack;
 }
 
-#pragma mark - UITableViewDelaget
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 4;
 }
