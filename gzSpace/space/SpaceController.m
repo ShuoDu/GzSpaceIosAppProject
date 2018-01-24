@@ -7,104 +7,114 @@
 //
 
 #import "SpaceController.h"
-#import "MainOneCell.h"
-#import "SpaceDetailController.h"
-static NSString *oneCellID = @"MainOneCell";
-@interface SpaceController ()<UITableViewDelegate,UITableViewDataSource>
-{
-    UITableView *myTableView;
-  
-}
+#import "NBLScrollTabController.h"
+#import "SpaceOneController.h"
+@interface SpaceController ()<NBLScrollTabControllerDelegate>
 @property (nonatomic,strong)UISearchBar *searchBar;
+@property (nonatomic, strong) NBLScrollTabController *scrollTabController;
+@property (nonatomic, strong) NSArray *viewControllers;
 @end
 
 @implementation SpaceController
 
-- (void) viewWillDisappear:(BOOL)animated {
-    [self.searchBar removeFromSuperview];
-}
-
-- (void) viewWillAppear:(BOOL)animated {
-    self.searchBar = [[UISearchBar alloc]initWithFrame:CGRectMake(100, 14,210, 12)];
-    self.searchBar.placeholder = @"搜索您要找的店铺或商品";
-    //一下代码为修改placeholder字体的颜色和大小
-    UITextField * searchField = [self.searchBar valueForKey:@"_searchField"];
-    [searchField setValue:[UIFont boldSystemFontOfSize:13] forKeyPath:@"_placeholderLabel.font"];
-    self.searchBar.backgroundColor = [UIColor clearColor];
-    self.searchBar.showsCancelButton = NO;
-    self.searchBar.backgroundColor =[UIColor colorWithRed:255/255.0 green:100/255.0 blue:59/255.0 alpha:1];
-    [self.navigationController.navigationBar addSubview:self.searchBar];
-}
+//- (void) viewWillDisappear:(BOOL)animated {
+//    [self.searchBar removeFromSuperview];
+//}
+//
+//- (void) viewWillAppear:(BOOL)animated {
+//    self.searchBar = [[UISearchBar alloc]initWithFrame:CGRectMake(100, 14,210, 12)];
+//    self.searchBar.placeholder = @"搜索您要找的店铺或商品";
+//    //一下代码为修改placeholder字体的颜色和大小
+//    UITextField * searchField = [self.searchBar valueForKey:@"_searchField"];
+//    [searchField setValue:[UIFont boldSystemFontOfSize:13] forKeyPath:@"_placeholderLabel.font"];
+//    self.searchBar.backgroundColor = [UIColor clearColor];
+//    self.searchBar.showsCancelButton = NO;
+//    self.searchBar.backgroundColor =[UIColor colorWithRed:255/255.0 green:100/255.0 blue:59/255.0 alpha:1];
+//    [self.navigationController.navigationBar addSubview:self.searchBar];
+//}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self addConfigView];
-    [self loadData];
-}
-
-- (void)loadData {
-    NSString *url = @"http://127.0.0.1:8080/store/list/";
-    [CYXHttpRequest get:url params:nil success:^(id responseObj) {
-         NSDictionary *weatherDic = [NSJSONSerialization JSONObjectWithData:responseObj options:NSJSONReadingMutableLeaves error:nil];
-         DLog(@"%@",weatherDic);
-    } failure:^(NSError *error) {
-        
-    }];
-}
-
-- (void)addConfigView {
-    UIBarButtonItem *left = [[UIBarButtonItem alloc]initWithTitle:@"格子铺" style:UIBarButtonItemStylePlain target:nil action:nil];
-    self.navigationItem.leftBarButtonItem = left;
-    
-    UIBarButtonItem * right = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"shopping_car"] style:(UIBarButtonItemStylePlain) target:nil action:nil];
-      self.navigationItem.rightBarButtonItem = right;
-    
-    self.view.backgroundColor=[UIColor colorWithRed:235/255.0
-                                                green:240/255.0
-                                                 blue:240/255.0
-                                                alpha:1.0];
-    
-    myTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-114)];
-    myTableView.delegate = self;
-    myTableView.dataSource = self;
-    myTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    myTableView.backgroundColor = NewViewBack;
-    [myTableView registerNib:[UINib nibWithNibName:@"MainOneCell" bundle:nil] forCellReuseIdentifier:oneCellID];
-    [self.view addSubview:myTableView];
+    self.navigationItem.title = @"格子店";
+    [self.view addSubview:self.scrollTabController.view];
     
 }
 
-#pragma mark - UITableViewDelaget
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 4;
-}
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 4;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 120;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+- (NBLScrollTabController *)scrollTabController {
+    if (!_scrollTabController) {
+        //                NBLScrollTabTheme *theme = [[NBLScrollTabTheme alloc] init];
+        //                theme.titleViewHeight = 80;
+        //                theme.badgeViewColor = [UIColor greenColor];
+        //                theme.titleViewBGColor = [UIColor blackColor];
+        //                theme.indicatorViewColor = [UIColor greenColor];
+        //                theme.titleFont = [UIFont systemFontOfSize:20];
+        //                theme.titleColor = [UIColor yellowColor];
+        //                theme.highlightColor = [UIColor greenColor];
+        //                _scrollTabController = [[NBLScrollTabController alloc] initWithTabTheme:theme];
+        _scrollTabController = [[NBLScrollTabController alloc] init];
+        _scrollTabController.view.frame =  CGRectMake(0, 0, WIDTH, HEIGHT);
+        //        _scrollTabController.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        _scrollTabController.delegate = self;
+        _scrollTabController.viewControllers = self.viewControllers;
+    }
     
-    return 40;
-}
-
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    SpaceDetailController *spaceDetail  = [[SpaceDetailController alloc]init];
-    spaceDetail.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:spaceDetail animated:YES];
+    return _scrollTabController;
 }
 
 
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (NSArray *)viewControllers
 {
-        MainOneCell *cellOne = [tableView dequeueReusableCellWithIdentifier:oneCellID];
-        cellOne.backgroundColor = NewViewBack;
-        return cellOne;
+    if (!_viewControllers) {
+        SpaceOneController *demo0 = [[SpaceOneController alloc] init];
+        NBLScrollTabItem *demo0Item = [[NBLScrollTabItem alloc] init];
+        demo0Item.title = @"格子铺";
+        demo0Item.textColor = [UIColor darkGrayColor];
+        demo0Item.highlightColor = MainNavColor;
+        demo0Item.hideBadge = YES;//每个title可以做个性化配置
+        demo0.tabItem = demo0Item;
+        
+        SpaceOneController *demo1 = [[SpaceOneController alloc] init];
+        NBLScrollTabItem *demo1Item = [[NBLScrollTabItem alloc] init];
+        demo1Item.title = @"商场";
+        demo1Item.textColor = [UIColor darkGrayColor];
+        demo1Item.highlightColor = MainNavColor;
+        demo1Item.hideBadge = YES;//每个title可以做个性化配置
+        demo1.tabItem = demo1Item;
+        
+        SpaceOneController *demo2 = [[SpaceOneController alloc] init];
+        NBLScrollTabItem *demo2Item = [[NBLScrollTabItem alloc] init];
+        demo2Item.title = @"咖啡厅";
+        demo2Item.textColor = [UIColor darkGrayColor];
+        demo2Item.highlightColor = MainNavColor;
+        demo2Item.hideBadge = YES;//每个title可以做个性化配置
+        demo2.tabItem = demo2Item;
+        
+        SpaceOneController *demo3 = [[SpaceOneController alloc] init];
+        NBLScrollTabItem *demo3Item = [[NBLScrollTabItem alloc] init];
+        demo3Item.title = @"餐厅";
+        demo3Item.textColor = [UIColor darkGrayColor];
+        demo3Item.highlightColor = MainNavColor;
+        demo3Item.hideBadge = YES;//每个title可以做个性化配置
+        demo3.tabItem = demo3Item;
+        _viewControllers = @[demo0, demo1, demo2, demo3];
+        
+        SpaceOneController *demo4 = [[SpaceOneController alloc] init];
+        NBLScrollTabItem *demo4Item = [[NBLScrollTabItem alloc] init];
+        demo4Item.title = @"其他";
+        demo4Item.textColor = [UIColor darkGrayColor];
+        demo4Item.highlightColor = MainNavColor;
+        demo4Item.hideBadge = YES;//每个title可以做个性化配置
+        demo4.tabItem = demo4Item;
+        _viewControllers = @[demo0, demo1, demo2, demo3,demo4];
+    }
+    return _viewControllers;
 }
+
+- (void)tabController:(NBLScrollTabController * __nonnull)tabController didSelectViewController:( UIViewController * __nonnull)viewController {
+    //业务逻辑处理
+}
+
+
 
 
 @end

@@ -113,8 +113,6 @@
     return view;
 }
 
-
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0 && indexPath.row == 1) {
         MeOneCell *meOne = [MeOneCell insWithCallback:^(NSInteger tag) {

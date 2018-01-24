@@ -45,7 +45,7 @@
                         <rect key="frame" x="258" y="11" width="62" height="54"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                        <state key="normal" title="待收货">
+                        <state key="normal" title="待评价">
                             <color key="titleColor" red="1" green="0.3921568627" blue="0.23137254900000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
                         <connections>

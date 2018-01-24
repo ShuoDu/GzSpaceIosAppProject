@@ -26,8 +26,7 @@ static NSString *twoCellID = @"MainTwoCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-   
-    self.navigationItem.title = @"格子空间";
+    self.navigationItem.title = @"格子购";
     self.tabBarItem.title = @"首页";
     UIBarButtonItem *left = [[UIBarButtonItem alloc]initWithTitle:@"北京市" style:UIBarButtonItemStylePlain target:self action:nil];
     self.navigationItem.leftBarButtonItem = left;
@@ -39,15 +38,13 @@ static NSString *twoCellID = @"MainTwoCell";
     myTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     myTableView.backgroundColor = NewViewBack;
     [myTableView registerNib:[UINib nibWithNibName:@"MainOneCell" bundle:nil] forCellReuseIdentifier:oneCellID];
-     [myTableView registerNib:[UINib nibWithNibName:@"MainTwoCell" bundle:nil] forCellReuseIdentifier:twoCellID];
+    [myTableView registerNib:[UINib nibWithNibName:@"MainTwoCell" bundle:nil] forCellReuseIdentifier:twoCellID];
     [self.view addSubview:myTableView];
-  
 }
 
 
 #pragma mark - UITableViewDelaget
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 3;
 }
 
@@ -60,11 +57,8 @@ static NSString *twoCellID = @"MainTwoCell";
 }
 
 // 返回组头部view的高度
-
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     return 40;
-    
 }
 //
 ////返回每组头部view
@@ -97,8 +91,7 @@ static NSString *twoCellID = @"MainTwoCell";
 //
 //}
 
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     UITableViewCell  * cell = [tableView dequeueReusableCellWithIdentifier:oneCellID];
    

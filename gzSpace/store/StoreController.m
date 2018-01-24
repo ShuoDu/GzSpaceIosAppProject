@@ -25,13 +25,10 @@ static NSString * headIdentifier = @"cxHeadID";
      [self.view addSubview:self.collectionView];
 }
 
-
-#pragma mark - set_and_get
 - (UICollectionView *)collectionView {
     if (!_collectionView) {
         //自动网格布局
         UICollectionViewFlowLayout * flowLayout = [[UICollectionViewFlowLayout alloc]init];
-        
         //设置单元格大小
         flowLayout.itemSize = CGSizeMake((WIDTH-30)/2, 174);
         //最小行间距(默认为10)
@@ -43,7 +40,6 @@ static NSString * headIdentifier = @"cxHeadID";
         //网格布局
         _collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT) collectionViewLayout:flowLayout];
         [_collectionView registerNib:[UINib nibWithNibName:@"StoreCell" bundle:nil] forCellWithReuseIdentifier:@"storeCell"];
-        
         //注册cell
         [_collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:identifier];
         //设置数据源代理
