@@ -37,7 +37,6 @@
     [super viewDidLoad];
     self.navigationItem.title = @"格子店";
     [self.view addSubview:self.scrollTabController.view];
-    
 }
 
 - (NBLScrollTabController *)scrollTabController {

@@ -28,8 +28,13 @@ static NSString *oneCellID = @"MainOneCell";
 - (void)loadData {
     NSString *url = @"http://127.0.0.1:8080/store/list/";
     [CYXHttpRequest get:url params:nil success:^(id responseObj) {
-        NSDictionary *weatherDic = [NSJSONSerialization JSONObjectWithData:responseObj options:NSJSONReadingMutableLeaves error:nil];
-        DLog(@"%@",weatherDic);
+        NSMutableArray *dataArray = [NSJSONSerialization JSONObjectWithData:responseObj options:NSJSONReadingMutableLeaves error:nil];
+        for (NSDictionary *dict in dataArray) {
+            NSString *imgRootUrl = @"http://127.0.0.1:8080";
+            NSString *imgUrl = [imgRootUrl stringByAppendingString:dict[@"store_img"]];
+            NSLog(@"%@",imgUrl);
+        }
+        DLog(@"%@",dataArray);
     } failure:^(NSError *error) {
         
     }];
